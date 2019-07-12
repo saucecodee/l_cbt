@@ -5,14 +5,14 @@
 //========== require the prompt module and create interface ==========
 const prompt = require('readline').createInterface(process.stdin, process.stdout);
 
-//========== require cli-tabel ==========
-var Table = require('cli-table');
+// //========== require cli-tabel ==========
+// var Table = require('cli-table');
 
-//========== require colors ==========
-var colors = require('colors');
+// //========== require colors ==========
+// var colors = require('colors');
 
-//========== require config ==========
-var config = require('./config')
+// //========== require config ==========
+// var config = require('./config')
 
 //===============================================================================
 //                  Global Variables                                           //
@@ -29,5 +29,5 @@ var q = 0;
 
 
 module.exports = {
-     header, q, answers, questions
+      q, answers, questions, prompt
 }
