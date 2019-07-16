@@ -5,10 +5,15 @@
 //========== require global variables ==========
 const config = require('./config');
 
-function header(q, msg) {
+
+//===============================================================================
+//                  Header functiom                                            //
+//===============================================================================
+
+function header(title, msg) {
      console.clear();
 
-     var table = new Table({
+     var table = new config.Table({
           chars: { 'top': '═', 'top-left': '╔', 'top-right': '╗', 'bottom': '═', 'bottom-left': '╚', 'bottom-right': '╝', 'left': '║', 'right': '║' },
           head: [title],
           colWidths: [72],
@@ -20,7 +25,9 @@ function header(q, msg) {
           console.log();
      } else {
           console.log();
-          console.log(colors.red('=> '), msg)
+          console.log(config.colors.red('=> '), msg)
           console.log()
      }
 }
+
+module.exports = header

@@ -4,24 +4,22 @@
 
 //========== require global variables ==========
 const config = require('./config');
+const goTo = require('./goToPage');
 
-//----------------------------
+//===============================================================================
+//                  Require modules                                            //
+//===============================================================================
 
-
-
-function validate (index, userAns) {
-
-    if(index >= 0 && (index >questions.length -1)){    //validate the index
-        let realAns = questions[index].answer;
-        if(realAns == userAns){
-            answers[index] +=1;  
-        }
-    }
-
-    
-    goToQuestion();
-
-    //
+function validate(ans, userAns) {
+     if (config.q >= 0 && (config.q < config.questions.length - 1)) {    //validate the index
+          if (ans == userAns) {
+               config.answers[config.q] = 1;
+          } else {
+               config.answers[config.q] = 0;
+          }
+     }
+     console.log(config.answers)
+     goTo();
 }
 
 module.exports = validate
